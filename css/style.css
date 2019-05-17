@@ -22,7 +22,87 @@
 	opacity: 1;	
 }
 
+/* Navbar */
+.navbar {
+	width: 100%;
+	height: 55px;
+	position: relative;
+	/*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);*/
+	box-shadow: none;
+	color: #575757;
+	display: flex;
+	align-items: center;
+	padding: 0 10px 0 10px;
+}
+
+/* Fixed Navbar */
+.navbar.fixed {
+	position: fixed !important;
+	top: 0;
+}
+
+/* Shadow */
+.shadow {
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+/* Reset the default li style */
+.navbar ul li {
+	min-height: 55px;
+	float: left;
+	margin-left: 20px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 5px;
+	background-color: transparent;
+}
+
+/* li hoverable */
+ul.hover li:hover {
+	background-color: var(--hover) !important;
+}
+
+/* Profile image */
+.profile {
+	position: absolute;
+	/*transition: all 0.1s ;*/
+}
+
+.profile.large {
+	height: 250px;
+	width: 250px;
+}
+
+.profile.small {
+	height: 40px;
+	width: 40px;
+}
+
+.navbar > .right {
+	right: 20px;
+}
+
 /* Section style */
 .section {
 	min-height: 100vh;
+}
+
+/* Layout */
+
+/* Display flex container */
+.flex {
+	display: flex;
+}
+
+/* Align on bottom */
+.flex > .bottom {
+	align-self: flex-end;
+}
+
+/* Typography */
+
+/* Bold text */
+.bold {
+	font-weight: bold;
 }
