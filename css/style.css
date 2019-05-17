@@ -2,3 +2,27 @@
 * {
 	font-family: 'Quicksand', sans-serif;
 }
+
+/* Reset Materialize parallax container height */
+.parallax-container {
+	height: 70vh;
+}
+
+/* Reset Materialize parallax style */
+.parallax-container .parallax {
+	position: fixed;
+	height: inherit;
+	overflow: hidden;
+	transform: translateY(0);
+	transition: transform 0.1s;
+}
+
+/* Reset Materialize parallax image style */
+.parallax-container .parallax img {
+	opacity: 1;	
+}
+
+/* Section style */
+.section {
+	min-height: 100vh;
+}
