@@ -1,13 +1,5 @@
 const navbar = $(".navbar"); // Stores the navar refference
-var navbarTop = navbar.offset().top;  // Get the navbar top offset
-
-const profile = $(".profile"); // Stores the profile refference
-
-// Window resize event
-$(window).resize( () => {
-	navbarTop = navbar.offset().top; // Update navbar top offset
-}); 
-
+//const profile = $(".profile"); // Stores the profile refference
 
 // Document scroll event
 $(document).scroll(() => {
@@ -15,23 +7,25 @@ $(document).scroll(() => {
 	// Get the scroll value
 	var scroll = $(document).scrollTop();
 
-	// Verifies if the scroll is still on parallax height
-	if(scroll < $(".parallax").height())
-		// Scrolls the parallax slower than the document's body
-		$(".parallax").css({ "transform": "translateY(-" + scroll / 4 + "px)" });
+	// // Verifies if the scroll is still on parallax height
+	// if(scroll < $(".parallax").height())
+	// 	// Scrolls the parallax slower than the document's body
+	// 	$(".parallax").css({ "transform": "translateY(-" + scroll / 4 + "px)" });
 
-	// Set the navbar position to fixed when it gets the top page
-	if(scroll >= navbarTop) {
-		// Verifies if navbar is already fixed
+	// Set the navbar position to fixed when the first section is scrolled up
+	if(scroll >= viewHeight + navbar.height()) {
+		// Verifies if navbar isn't already fixed
 		if(!navbar.hasClass("fixed")) {
 			navbar.addClass("fixed shadow"); // If itsn't, turns it fixed
 
-			profile.addClass("small");
+			//profile.remove("hide");
 		}
 	} else {
-		navbar.removeClass("fixed shadow");
-		profile.removeClass("small");
-		profile.addClass("large");
+		// Verifies if navbar is already fixed
+		if(navbar.hasClass("fixed")) {
+			navbar.removeClass("fixed shadow");
+			//profile.addClass("hide");
+		}
 	}
 });
 

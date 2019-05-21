@@ -50,7 +50,6 @@
 .navbar ul li {
 	min-height: 55px;
 	float: left;
-	margin-left: 20px;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
@@ -58,15 +57,43 @@
 	background-color: transparent;
 }
 
+/* Navbar ul li links */
+ul li a {
+	color: inherit;
+}
+
+/* li a non-hoverable */
+ul li a:hover {
+	background-color: transparent !important;
+}
+
 /* li hoverable */
 ul.hover li:hover {
-	background-color: var(--hover) !important;
+	background-color: #E7E7E7 !important;
 }
+
+/* Components */
 
 /* Profile image */
 .profile {
-	position: absolute;
+	/*position: absolute;*/
 	/*transition: all 0.1s ;*/
+}
+
+/* Name */
+.name {
+	font-weight: bold;
+	font-size: 80px;
+}
+
+/* Slogar */
+.slogan {
+	font-size: 25px;
+}
+
+.profile.extra-large {
+	height: 300px;
+	width: 300px;
 }
 
 .profile.large {
@@ -85,24 +112,80 @@ ul.hover li:hover {
 
 /* Section style */
 .section {
+	padding: 0;
 	min-height: 100vh;
 }
 
 /* Layout */
+
+.h-100vh {
+	height: 100vh;
+}
 
 /* Display flex container */
 .flex {
 	display: flex;
 }
 
-/* Align on bottom */
-.flex > .bottom {
-	align-self: flex-end;
+/* Left aligned content */
+.flex.left-content {
+	justify-content: flex-start;
 }
 
-/* Typography */
+/* Center aligned content */
+.flex.center {
+	justify-content: center;
+}
 
-/* Bold text */
-.bold {
-	font-weight: bold;
+/* Right aligned content */
+.flex.right-content {
+	justify-content: flex-end;
+}
+
+/* Content starts on container's top */
+.flex.top {
+	align-items: flex-start;
+}
+
+/* Vertical align content */
+.flex.middle {
+	align-items: center;
+}
+
+/* Content starts on container's bottom */
+.flex.bottom {
+	align-items: flex-end;
+}
+
+/* Left alignment */
+.flex > .left {
+	float: none;
+	margin-right: auto;
+}
+
+/* Center alignment */
+.flex > .center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Right alignment */
+.flex > .right {
+	float: none;
+	margin-left: auto;
+}
+
+/* Begin on top */
+.flex > .top {
+	align-self: flex-start;
+}
+
+/* Begin on middle */
+.flex > .middle {
+	align-self: center;
+}
+
+/* Begin on bottom */
+.flex > .bottom {
+	align-self: flex-end;
 }
