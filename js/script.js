@@ -1,3 +1,8 @@
+// Inicializate Lune modal
+$(document).ready( () => {
+	L.modal();
+});
+
 const navbar = $(".navbar"); // Stores the navar refference
 //const profile = $(".profile"); // Stores the profile refference
 

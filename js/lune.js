@@ -3,9 +3,9 @@ var viewHeight = $(window).height(); // Viewport height
 var viewWidth = $(window).width(); // Viewport width
 
 // Inicializate Lune
-// $(document).ready( () => {
-// 	L.init();
-// });
+$(document).ready( () => {
+	L.init();
+});
 
 // Resize event
 $(window).resize( () => {
@@ -16,26 +16,26 @@ $(window).resize( () => {
 
 class L {
 	// Inits the general usage Lune components
-	// static init() {
-	// 	L.form();
-	// }
+	static init() {
+		L.form();
+	}
 
-	// // Manipulates forms components
-	// static form() {
-	// 	L.textarea(); // Inits textarea
-	// }
+	// Manipulates forms components
+	static form() {
+		L.textarea(); // Inits textarea
+	}
 
-	// // Textarea
-	// static textarea() {
-	// 	// Resize textarea on input event
-	// 	$("textarea").on("input", event => {
-	// 		console.log("input");
-	// 		const element = event.target;
-	// 		element.style = 'height: auto';
-	// 		element.style = 'height:' + element.scrollHeight + 'px';
+	// Textarea
+	static textarea() {
+		// Resize textarea on input event
+		$("textarea").on("input", event => {
+			console.log("input");
+			const element = event.target;
+			element.style = 'height: auto';
+			element.style = 'height:' + element.scrollHeight + 'px';
 	
-	// 	});
-	// }
+		});
+	}
 
 	// Returns the target - defined on mark html element attribute - of an event
 	static target(e) {

@@ -3,6 +3,11 @@
 	font-family: 'Quicksand', sans-serif;
 }
 
+html, body {
+	min-height: 100vh;
+	padding: 0;
+}
+
 /* Reset Materialize parallax container height */
 .parallax-container {
 	height: 70vh;
@@ -72,6 +77,154 @@ ul.hover li:hover {
 	background-color: #E7E7E7 !important;
 }
 
+/* Form */
+
+/* Form input wrapper */
+.input-field, .input-box {
+	position: relative;
+}
+
+/* Adds a margin to separate sequencial fields */
+[class*="input-"] + [class*="input-"] {
+	margin-top: 20px;
+}
+
+/* Inputs */
+.input-field input, .input-box input, .input-field textarea, .input-box textarea {
+	height: 40px;
+	width: 100%;
+	font-family: inherit;
+	outline: none;
+	box-shadow: none !important;
+	text-indent: 10px;
+	transition: border 0.2s;
+	min-width: 100%;
+	color: inherit;
+	font-weight: bold;
+}
+
+/* Input/Textarea underline */
+.input-field input, .input-field textarea {
+	border: none;
+	border-bottom: 2px solid #A9A9A9;
+}
+
+/* Textarea size and resize */
+[class*="input-"] textarea {
+	text-indent: 0;
+	padding: 10px;
+	height: 50px;
+	resize: none;
+	overflow: hidden;
+}
+
+/* Input/Textarea underline focus */
+.input-field input:focus, .input-field textarea:focus {
+	border-bottom-color: #575757;
+}
+
+/* Input/Textarea boxed */
+.input-box input, .input-box textarea {
+	border-radius: 10px;
+	border: 2px solid #A9A9A9;
+}
+
+/* Input/Textarea underline focus */
+.input-box input:focus, .input-box textarea:focus {
+	border-color: #575757;
+}
+
+/* Placeholder color */
+::placeholder {
+  color: #A7A7A7;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #A7A7A7;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #A7A7A7;
+}
+
+
+/* Modal */
+
+/* Modal and overlayer */
+.modal, .overlayer {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.2s linear;
+	position: fixed;
+}
+
+/* Unactive modal */
+.modal {
+	display: none;
+	opacity: 0;
+	will-change: opacity;
+	transform: scale(0.85, 0.85);
+	transition: opacity 0.2s, transform 0.2s, top 0.1s;
+	background-color: #FAFAFA;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+	border-radius: 10px;
+	z-index: 10;
+	overflow-y: auto;
+	position: fixed;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	top: 10%;
+	left: 0;
+	min-height: 30vh;
+	max-height: 40vh;
+}
+
+@media only screen and (min-width: 992px) {
+	.modal {
+		width: 60%;
+		margin-left: 20%;
+		margin-right: 20%;
+		max-height: 50vh;
+	}
+}
+
+/* Active modal */
+.modal.active {
+	transform: scale(1, 1);
+	top: 15%;
+	opacity: 1;
+}
+
+/* Image modal */
+.modal.img {
+	width: auto;
+	height: auto;
+	max-height: none;
+	overflow: hidden;
+	background-color: transparent !important;
+	box-shadow: none;
+	margin-right: 0;
+	margin-left: 0;
+	top: 0;
+}
+
+/* Overlayer */
+.overlayer {
+	background-color: black;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}
+
+/* Active overlayer */
+.overlayer.active {
+	opacity: 0.5;
+}
+
+
 /* Components */
 
 /* Profile image */
@@ -80,8 +233,13 @@ ul.hover li:hover {
 	/*transition: all 0.1s ;*/
 }
 
-/* Name */
-.name {
+/* Username */
+.username {
+	font-size: 15px;
+}
+
+/* Artistic name */
+.artistic-name {
 	font-weight: bold;
 	font-size: 80px;
 }
@@ -89,6 +247,18 @@ ul.hover li:hover {
 /* Slogar */
 .slogan {
 	font-size: 25px;
+}
+
+/* Name */
+.name {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+/* Bio */
+.bio {
+	text-align: left;
+	font-size: 18px;
 }
 
 .profile.extra-large {
@@ -115,6 +285,44 @@ ul.hover li:hover {
 	padding: 0;
 	min-height: 100vh;
 }
+
+.section .row {
+	border-bottom: none !important;
+}
+
+
+/* General styles */
+
+/* Hide overflow content */
+.overhide {
+	overflow: hidden;
+}
+
+/* Rounded */
+.round {
+	border-radius: 3%;
+}
+
+/* Left rounded */
+.round-left {
+	border-radius: 3% 0 0 3%;
+}
+
+/* Top rounded */
+.round-top {
+	border-radius: 3% 3% 0 0;
+}
+
+/* Right rounded */
+.round-right {
+	border-radius: 0 3% 3% 0;
+}
+
+/* Bottom rounded */
+.round-bottom {
+	border-radius: 0 0 3% 3%;
+}
+
 
 /* Layout */
 
