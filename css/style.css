@@ -443,3 +443,16 @@ input:-webkit-autofill {
 .flex > .bottom {
 	align-self: flex-end;
 }
+
+/* Divider */
+.line {
+	border-color: #FFF;
+	opacity: 0.5;
+	width: 100%;
+}
+
+.scratted {
+	padding: 10px;
+	position: absolute;
+	color: #A9A9A9;
+}
