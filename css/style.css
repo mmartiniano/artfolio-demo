@@ -97,10 +97,10 @@ ul.hover li:hover {
 	outline: none;
 	box-shadow: none !important;
 	text-indent: 10px;
-	transition: border 0.2s;
 	min-width: 100%;
-	color: inherit;
-	font-weight: bold;
+	color: #575757;
+	font-weight: bold !important;
+	transition: border 0.2s;
 }
 
 /* Input/Textarea underline */
@@ -136,16 +136,45 @@ ul.hover li:hover {
 
 /* Placeholder color */
 ::placeholder {
-  color: #A7A7A7;
+  color: #A9A9A9;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
- color: #A7A7A7;
+ color: #A9A9A9;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
- color: #A7A7A7;
+ color: #A9A9A9;
+}
+
+/* Removes autofill yellow background */
+input:-webkit-autofill {
+    transition: all 5000s ease-in-out 0s;
+}
+
+/* Button */
+.input-field button {
+	margin-top: 5px;
+	height: 40px;
+	width: 100%;
+	min-width: none;
+	font-family: inherit;
+	outline: none;
+	box-shadow: none !important;
+	text-indent: 10px;
+	transition: border 0.2s;
+	color: #575757;
+	border: 2px solid #575757;
+	border-radius: 5px;
+	font-weight: bold !important;
+	cursor: pointer;
+	transition: opacity 0.5s;
+}
+
+/* Button focus */
+.input-field button:active {
+	opacity: 0.6;
 }
 
 
@@ -227,12 +256,6 @@ ul.hover li:hover {
 
 /* Components */
 
-/* Profile image */
-.profile {
-	/*position: absolute;*/
-	/*transition: all 0.1s ;*/
-}
-
 /* Username */
 .username {
 	font-size: 15px;
@@ -271,6 +294,12 @@ ul.hover li:hover {
 	width: 250px;
 }
 
+/* Profile image */
+.profile {
+	/*position: absolute;*/
+	/*transition: all 0.1s ;*/
+}
+
 .profile.small {
 	height: 40px;
 	width: 40px;
@@ -288,6 +317,23 @@ ul.hover li:hover {
 
 .section .row {
 	border-bottom: none !important;
+}
+
+.desktop {
+	width: 350px;
+	height: 200px;
+	overflow: hidden;
+}
+
+.desktop .circle {
+	margin-top: 5px;
+	margin-left: 5px;
+	height: 10px;
+	width: 10px;
+}
+
+.desktop + .desktop {
+	transform: translate(25%, -50%);
 }
 
 
