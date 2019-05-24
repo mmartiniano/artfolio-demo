@@ -57,27 +57,30 @@
 
 			<!-- Left side -->
 			<div class="col s12 l5 h-100vh flex middle z-depth-3 round-left white container">
-				<div class="container overhide">
-					<!-- Login form -->
-					<form class="container">
+				<div class="container">
+					<!-- Login  -->
+					<div id="login" class="container">
+						<form name="login">
 						<!-- Username field -->
-						<div class="input-field row fadeout">
-							<input type="text" name="username" placeholder="Username" class="browser-default">
-						</div>
+							<div class="input-field row">
+								<input type="text" name="username" placeholder="Username" class="browser-default">
+							</div>
 
-						<!-- Password field -->
-						<div class="input-field row fadeout">
-							<input type="text" name="password" placeholder="Password" class="browser-default">
-						</div>
+							<!-- Password field -->
+							<div class="input-field row">
+								<input type="password" name="password" placeholder="Password" class="browser-default">
+							</div>
 
-						<!-- Submit button -->
-						<div class="input-field row fadeout">
-							<button type="submit" class="white right">Log in</button>
-						</div>
-					</form>
+							<!-- Submit button -->
+							<div class="input-field row">
+								<button type="submit" class="white right">Log in</button>
+							</div>
 
-					<!-- Sign up option -->
-					<div class="container">
+							
+						</form>
+
+						<!-- Sign up option -->
+
 						<!-- Divider -->
 						<div class="mt-25 flex middle center row">
 							<hr class="line">
@@ -85,11 +88,56 @@
 						</div>
 
 						<!-- Submit button -->
-						<div class="input-field row fadeout">
-							<button type="submit" class="white right fadeout-trigger">Sign up now for free</button>
+						<div class="input-field row">
+							<button type="submit" class="white right">Sign up now for free</button>
+						</div>
+					</div>
+					
+					<!-- Sign up -->
+					<div id="signup" class="container hide">
+						<form name="signup">
+							<!-- Name field -->
+							<div class="input-field row">
+								<input type="text" name="name" placeholder="Name" class="browser-default">
+							</div>
+
+							<!-- Username field -->
+							<div class="input-field row">
+								<input type="text" name="username" placeholder="Username" class="browser-default">
+							</div>
+
+							<!-- Email field -->
+							<div class="input-field row">
+								<input type="email" name="email" placeholder="Email" class="browser-default">
+							</div>
+
+							<!-- Password field -->
+							<div class="input-field row">
+								<input type="password" name="password" placeholder="Password" class="browser-default">
+							</div>
+
+							<!-- Confirm password field -->
+							<div class="input-field row">
+								<input type="password" name="cpassword" placeholder="Confirm password" class="browser-default">
+							</div>
+
+							<!-- Submit button -->
+							<div class="input-field row">
+								<button type="submit" class="white right">Join Artfolio</button>
+							</div>
+						</form>
+						<!-- Login option -->
+
+						<!-- Divider -->
+						<div class="mt-25 flex middle center row">
+							<hr class="line">
+							<span class="white bold scratted"> or </span>
 						</div>
 
-						
+						<!-- Submit button -->
+						<div class="input-field row">
+							<button type="submit" class="white right">Log in</button>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -1,7 +1,6 @@
 // Inicializate Lune modal
 $(document).ready( () => {
 	L.modal();
-	L.fadeout();
 });
 
 const navbar = $(".navbar"); // Stores the navar refference

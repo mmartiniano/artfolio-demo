@@ -38,13 +38,29 @@ class L {
 	}
 
 	static fadeout() {
-		var delay = 0;
+		var delay = 0; 	// Stores the delay to genereta cascate effect
+		var signal = ""; // Changes the direction of the translate effect
 
-		$(".fadeout-trigger").click( () => {
+		// Button on-click event
+		$(".fadeout-trigger").click( trigger => {
+
+			// If the direction is left, change the signal
+			if($(trigger).attr("target").getAttribute("direction") == "left") signal = "-";
+
+			// Applies the fadeout effect to each div
 			$(".fadeout").each( function() {
-				setTimeout( () => { $(this).addClass("active"); }, delay);
-				delay += 100;
+
+				this.style.opacity = "0";
+				setTimeout( () => { this.style.transform = "translateX(" + signal + "300px)"; }, delay);
+
+				delay += 30;
+
 			});	
+
+			$(".fadeout").last().one("transitionend", () => { // Once the animation of the last element is done...
+				$(".fadeout").css("display", "none"); // Sets display property to none of them all
+			});
+
 		});
 	}
 
