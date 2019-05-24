@@ -451,8 +451,27 @@ input:-webkit-autofill {
 	width: 100%;
 }
 
+/* Text between dividers */
 .scratted {
 	padding: 10px;
+	margin-top: -1px;
 	position: absolute;
 	color: #A9A9A9;
+}
+
+/* Margin top */
+.mt-25 {
+	margin-top: 25px;
+}
+
+/* Fade out animation */
+.fadeout {
+	transform: translateX(0);
+	opacity: 1;
+	transition: transform 0.7s cubic-bezier(0.26,-0.31, 0.01, 1.07), opacity 0.6s;
+}
+
+.fadeout.active {
+	transform: translateX(200px);
+	opacity: 0;
 }

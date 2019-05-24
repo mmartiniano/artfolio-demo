@@ -37,6 +37,17 @@ class L {
 		});
 	}
 
+	static fadeout() {
+		var delay = 0;
+
+		$(".fadeout-trigger").click( () => {
+			$(".fadeout").each( function() {
+				setTimeout( () => { $(this).addClass("active"); }, delay);
+				delay += 100;
+			});	
+		});
+	}
+
 	// Returns the target - defined on mark html element attribute - of an event
 	static target(e) {
 		return $("#" + $(e).attr("target").getAttribute("mark"));
