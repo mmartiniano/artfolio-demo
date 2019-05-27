@@ -343,6 +343,11 @@ input:-webkit-autofill {
 	overflow: hidden;
 }
 
+/* Overflow auto */
+.overauto {
+	overflow-y: auto;
+}
+
 /* Rounded */
 .round {
 	border-radius: 3%;
@@ -450,6 +455,11 @@ input:-webkit-autofill {
 	width: 100%;
 }
 
+/* Text between dividers wrapper */
+.scratted-wrapper {
+	position: relative;
+}
+
 /* Text between dividers */
 .scratted {
 	padding: 10px;
@@ -461,6 +471,11 @@ input:-webkit-autofill {
 /* Margin top */
 .mt-25 {
 	margin-top: 25px;
+}
+
+/* Margin botom */
+.mb-0 {
+	margin-bottom: 0;
 }
 
 /* Fade out animation */
