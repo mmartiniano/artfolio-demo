@@ -3,9 +3,15 @@
 	font-family: 'Quicksand', sans-serif;
 }
 
+/* Reset body padding and height */
 html, body {
 	min-height: 100vh;
 	padding: 0;
+}
+
+/* Black background */
+.black {
+	background-color: #575757;
 }
 
 /* Reset Materialize parallax container height */
@@ -32,12 +38,16 @@ html, body {
 	width: 100%;
 	height: 55px;
 	position: relative;
-	/*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);*/
-	box-shadow: none;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 	color: #575757;
 	display: flex;
 	align-items: center;
 	padding: 0 10px 0 10px;
+}
+
+/* No shadow navbar */
+.navbar.flat {
+	box-shadow: none !important;
 }
 
 /* Fixed Navbar */
@@ -45,6 +55,65 @@ html, body {
 	position: fixed !important;
 	top: 0;
 }
+
+/* Left-aligned content navbar */
+.navbar.left {
+	justify-content: flex-start;
+}
+
+/* Center-aligned content navbar */
+.navbar.center {
+	justify-content: center;
+}
+
+/* Right-aligned content navbar */
+.navbar.right {
+	justify-content: flex-end;
+}
+
+/* Left alignment */
+.navbar > .left {
+	float: none;
+	margin-right: auto;
+}
+
+/* Center alignment */
+.navbar > .center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Right alignment */
+.navbar > .right {
+	float: none;
+	margin-left: auto;
+}
+
+
+/* Clears default text-decorations from all a elements inside .navbar */
+.navbar a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Resets the default ul style */
+.navbar ul {
+	min-height: 100%;
+	list-style: none;
+	display: inline-block;
+}
+
+/* Resets the default li style */
+.navbar ul li {
+	min-height: 55px;
+	float: left;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 5px;
+	background-color: transparent;
+}
+
 
 /* Shadow */
 .shadow {
@@ -255,6 +324,23 @@ input:-webkit-autofill {
 
 /* Components */
 
+/* Logo */
+/* .logo {
+	width: 50px;
+	height: auto;
+}
+
+/* Brand */
+.brand {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+/* Brand after logo */
+.logo + .brand {
+	margin-left: 5px;
+} */
+
 /* Username */
 .username {
 	font-size: 15px;
@@ -302,10 +388,6 @@ input:-webkit-autofill {
 .profile.small {
 	height: 40px;
 	width: 40px;
-}
-
-.navbar > .right {
-	right: 20px;
 }
 
 /* Section style */
@@ -484,4 +566,16 @@ input:-webkit-autofill {
 	opacity: 1;
 	transition: transform 0.2s, opacity 0.5s;
 	/*transition: transform 0.5s cubic-bezier(0.26,-0.31, 0.01, 1.07), opacity 0.5s;*/
+}
+
+/* Typography */
+
+/* Bold text */
+.bold {
+	font-weight: bold;
+}
+
+/* Black text */
+.black-text {
+	color: #575757;
 }
