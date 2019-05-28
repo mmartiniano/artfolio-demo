@@ -71,6 +71,20 @@ class L {
 
 	// Manipulates the modal funtions
 	static modal() {
+
+		var control = m => {
+			Modal.show(m); // Show modal
+
+			// Hide modal on click in overlayer component
+			$(".overlayer").click( () => {
+				Modal.hide(m); // Hide modal
+				m.one("transitionend", () => { // Once the animation is done...
+					Modal.drop(m);
+				});
+				
+			});
+		}
+
 		// Adds event listener to modal triggers buttons
 		$("button.modal-trigger").click(buttonEvent => {
 			/* 
@@ -78,55 +92,60 @@ class L {
 			 	and stores the reference in m
 			*/
 			const m = L.target(buttonEvent); // Modal refference
-			Modal.show(m); // Show modal
-
-			// $(".modal.img").each( function() {
-			// 	console.log(this);
-			// });
-
-			// Hide modal on click in overlayer component
-			$(".overlayer").click( () => {
-				Modal.hide(m); // Hide modal
-			});
+			control(m);
 		});
 
-		// Sets the style of the modals image
-		$(".modal-img").each( function() {
-			const img = new Image(this); // Creates a new Image object
+		$(".img-modal-trigger").click( imgEvent => {
+			const target = imgEvent.target;
+			const m = Modal.create(target.src);
+			control(m);
+
+			const e = $(".modal-img")[0];
+			const img = new Image(e); // Creates a new Image object
 			var proportion = img.width / img.height;
 
 			// Adjust image view
 			var adjust = function(element) {
+				console.log(img.orientation);
 				// Verifies the image orientation
 				if(img.orientation == "portrait") { // Portrait
 
 					// If the image height isn't less than 70% of the window height...
 					if(! img.height < 0.7 * viewHeight)
 						img.height = 0.7 * viewHeight; // Set the height to 70% of client height
-					else
-						img.height = img.height;
 
 					img.width = img.height * proportion; // Adjust image dimension by using the original proportion 
 					
 			
-				} else { // Landscape
+				} else if(img.orientation == "landscape") { // Landscape
 
 					// If the image width isn't less than 70% of the window width...
-					if(! img.width < 0.9 * viewWidth) 
-						img.width = 0.9 * viewWidth; // Set the width to 90% of client width
-					else
-						img.width = img.width;
+					if(! img.width < 0.7 * viewWidth) 
+						img.width = 0.7 * viewWidth; // Set the width to 90% of client width
 
 					img.height = img.width / proportion; // Adjust image dimension by using the original proportion
+				
+				} else {
+					if(img.width > 0.7 * viewWidth) {
+						img.width = 0.7 * viewWidth;
+						img.height = img.width;
+					}
+
+					if(img.height > 0.7 * viewHeight) {
+						img.height = 0.7 * viewHeight
+						img.width = img.height;
+					}
+
 				}
 
 				img.render() // Changes the image dimension
+				$(element).parent().css({"width": img.width, "height": img.height});
 				$(element).parent()[0].style.marginLeft = (viewWidth - img.width) / 2 + "px"; // Center the modal horizontally
 				$(element).parent()[0].style.marginTop = (viewHeight - img.height) / 2 + "px"; // Center the modal vertically
 			}
 
-			adjust(this);
-			$(window).resize( () => { adjust(this) } );
+			adjust(e);
+			$(window).resize( () => { adjust(e) } );
 		});
 	}
 }
@@ -141,7 +160,12 @@ class Image {
 		this._height = img.naturalHeight; // Gets the image original height
 
 		// Sets the image orientation
-		this._orientation = this._width < this._height ? "portrait" : "landscape";
+		if(this._width < this._height)
+			this._orientation = "portrait"
+		else if(this._width > this._height)
+			this._orientation = "landscape"
+		else
+			this._orientation = "square"
 	}
 
 	// Getters
@@ -197,7 +221,7 @@ class Overlayer {
 		overlayer.one("transitionend", () => { // Once the animation is done...
 			overlayer.css("display", "none"); // Sets display property to none 
 			$(overlayer).remove(); // Removes the overlayer divs
-		})
+		});
 	}
 }
 
@@ -219,5 +243,19 @@ class Modal {
 		modal.one("transitionend", () => { // Once the animation is done...
 			modal.css("display", "none"); // Sets display property to none
 		}); 
+	}
+
+	static create(src) {
+		var html = '<div class="modal img">';
+		html += '<img class="modal-img" src="' + src + '">';
+		html += '</div>';
+		$('body').append(html); // Writes an modal
+		const modal = $(".modal.img");	// Modal refference
+		return $(modal);
+	}
+
+
+	static drop(modal) {
+		modal.remove();
 	}
 }

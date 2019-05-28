@@ -296,8 +296,6 @@ input:-webkit-autofill {
 
 /* Image modal */
 .modal.img {
-	width: auto;
-	height: auto;
 	max-height: none;
 	overflow: hidden;
 	background-color: transparent !important;
@@ -396,8 +394,25 @@ input:-webkit-autofill {
 	min-height: 100vh;
 }
 
-.section .row {
+/* Section name */
+.section-name {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.section > .row {
 	border-bottom: none !important;
+}
+
+.gallery-item {
+	height: 300px;
+	width: 300px;
+}
+
+.gallery-item img {
+	object-fit: cover;
+	height: 300px;
+	width: 300px;
 }
 
 .desktop {
