@@ -323,17 +323,22 @@ input:-webkit-autofill {
 /* Components */
 
 /* Logo */
-/* .logo {
-	width: 50px;
+.logo {
+	width: 60px;
 	height: auto;
 }
 
 /* Brand */
 .brand {
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 30px;
 }
 
+/* Brand after logo */
+/*.logo + .brand {
+	margin-top: -8px;
+}
+*/
 /* Brand after logo */
 .logo + .brand {
 	margin-left: 5px;
