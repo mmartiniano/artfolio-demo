@@ -405,8 +405,15 @@ input:-webkit-autofill {
 	font-size: 25px;
 }
 
+
 .section > .row {
 	border-bottom: none !important;
+}
+
+.gallery {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-between;
 }
 
 .gallery-item {
@@ -415,6 +422,7 @@ input:-webkit-autofill {
 }
 
 .gallery-item img {
+	cursor: pointer;
 	object-fit: cover;
 	height: 300px;
 	width: 300px;

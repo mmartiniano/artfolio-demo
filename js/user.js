@@ -1,13 +1,3 @@
-$(".gallery").html( () => {
-	var html = "";
-	for(var i = 1; i < 10; i++) {
-		html += '<div class="gallery-item col">';
-			html += '<img class="img-modal-trigger" src="img/af-artessauro-img-' + i + '.jpg">';
-		html += '</div>';
-	}
-	return html;
-});
-
 // Inicializate Lune modal
 $(document).ready( () => {
 
