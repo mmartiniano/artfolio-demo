@@ -114,6 +114,10 @@ html, body {
 	background-color: transparent;
 }
 
+li +  li {
+	margin-left: 25px !important;
+}
+
 
 /* Shadow */
 .shadow {
@@ -127,7 +131,9 @@ html, body {
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	border-top: none !important;
 	padding: 5px;
+	font-size: 18px;
 	background-color: transparent;
 }
 
@@ -393,6 +399,17 @@ input:-webkit-autofill {
 	width: 40px;
 }
 
+.profile img {
+	border: 5px solid white;
+}
+
+.header {
+	padding-top: 20px;
+	min-height: 30vh;
+	background-image: url("../img/af-artessauro-img-5.jpg");
+	background-position: center;
+}
+
 /* Section style */
 .section {
 	padding: 0;
@@ -413,13 +430,21 @@ input:-webkit-autofill {
 .gallery {
 	display: flex;
 	flex-flow: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
+}
+
+@media only screen and (max-width: 780px) {
+	.gallery {
+		justify-content: center !important;
+	}
 }
 
 .gallery-item {
+	margin-top: 20px;
 	height: 300px;
 	width: 300px;
 }
+
 
 .gallery-item img {
 	cursor: pointer;
