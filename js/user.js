@@ -6,23 +6,33 @@ $(document).ready( () => {
 });
 
 const navbar = $(".navbar"); // Stores the navar refference
+var navbarOffset = navbar.offset().top;
+const user = $(".user");
+
+var scroll = $(document).scrollTop();
 
 // Document scroll event
 $(document).scroll(() => {
-
 	// Get the scroll value
-	var scroll = $(document).scrollTop();
+	scroll = $(document).scrollTop();
+	fixNavbar();
+});
 
+fixNavbar();
+
+function fixNavbar() {
 	// Set the navbar position to fixed when the first section is scrolled up
-	if(scroll >= viewHeight + navbar.height()) {
+	if(scroll >= navbarOffset) {
 		// Verifies if navbar isn't already fixed
 		if(!navbar.hasClass("fixed")) {
-			navbar.addClass("fixed shadow"); // If itsn't, turns it fixed
+			navbar.addClass("fixed"); // If itsn't, turns it fixed
+			user.removeClass("hide");
 		}
 	} else {
 		// Verifies if navbar is already fixed
 		if(navbar.hasClass("fixed")) {
-			navbar.removeClass("fixed shadow");
+			navbar.removeClass("fixed");
+			user.addClass("hide");
 		}
 	}
-});
+}
