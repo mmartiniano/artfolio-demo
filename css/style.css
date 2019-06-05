@@ -38,15 +38,12 @@ html, body {
 	width: 100%;
 	height: 55px;
 	position: relative;
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 2px 2px -2px rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 6px 5px -5px rgba(0,0,0,0.2);
 	color: #575757;
 	padding: 0 10px 0 10px;
-}
-
-.navbar div {
 	display: flex;
+	justify-content: center;
 	align-items: center !important;
-	height: 100%;
 }
 
 /* No shadow navbar */
@@ -368,31 +365,26 @@ input:-webkit-autofill {
 	margin-left: 5px;
 }
 
-.data p {
-	/*box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-	
-	background-color: white !important;
-	opacity: 0.7;*/
-	color: white;
-	background-color: rgba(0, 0, 0, 0.4);
-	border-radius: 10px;
-	padding: 3px;
-}
 
 /* Username */
 .username {
+	margin-top: 0;
 	font-size: 15px;
+	color: #575757;
 }
 
 /* Artistic name */
 .artistic-name {
+	margin-top: 0;
+	margin-bottom: 0;
 	font-weight: bold;
-	font-size: 80px;
+	font-size: 40px;
 }
 
 /* Slogar */
 .slogan {
-	font-size: 25px;
+	margin-top: 0;
+	font-size: 20px;
 }
 
 /* Name */
@@ -419,7 +411,7 @@ input:-webkit-autofill {
 
 /* Profile image */
 .profile {
-	/*position: absolute;*/
+	/* position: absolute; */
 	/*transition: all 0.1s ;*/
 }
 
@@ -428,15 +420,34 @@ input:-webkit-autofill {
 	width: 40px;
 }
 
+.header .profile.large {
+	position: relative;
+	top: -60%;
+}
+
 .header .profile.large img {
 	border: 5px solid white;
+	margin-right: 15px;
 }
 
 .header {
-	padding-top: 20px;
-	min-height: 30vh;
+
+}
+
+.cover {
 	background-image: url("../img/af-artessauro-img-5.jpg");
 	background-position: center;
+	height: 50vh;
+	width: 100%;
+}
+
+.user-data {
+	position: relative;
+	height: 130px;
+}
+
+.data {
+	/* transform: translateX(200px); */
 }
 
 /* Section style */
