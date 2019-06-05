@@ -25,12 +25,14 @@ function fixNavbar() {
 	if(scroll >= navbarOffset) {
 		// Verifies if navbar isn't already fixed
 		if(!navbar.hasClass("fixed")) {
+			$(".header").css("marginBottom", "180px");
 			navbar.addClass("fixed"); // If itsn't, turns it fixed
 			user.removeClass("hide");
 		}
 	} else {
 		// Verifies if navbar is already fixed
 		if(navbar.hasClass("fixed")) {
+			$(".header").css("marginBottom", "0");
 			navbar.removeClass("fixed");
 			user.addClass("hide");
 		}
