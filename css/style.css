@@ -367,6 +367,39 @@ input:-webkit-autofill {
 	margin-left: 5px;
 }
 
+/* Social networks wrapper */
+.social {
+	display: flex;
+	align-items: center;
+}
+
+/* Space between social networks */
+.social a + a {
+	margin-left: 10px;
+}
+
+/* Social network */
+.social-network {
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #A7A7A7;
+	color: #575757;
+	display: flex;
+	align-items: center;
+}
+
+/* Social network icon */
+.social i {
+	font-size: 20px;
+	color: #575757;
+}
+
+/* Social network username */
+.social-network span {
+	margin-left: 5px;
+	font-weight: bold;
+}
+
 /* Username */
 .username {
 	margin-top: 0;
@@ -519,7 +552,6 @@ input:-webkit-autofill {
 .desktop + .desktop {
 	transform: translate(25%, -50%);
 }
-
 
 /* General styles */
 
