@@ -30,14 +30,14 @@ function fixNavbar() {
 	if(scroll >= navbarOffset) {
 		// Verifies if navbar isn't already fixed
 		if(!navbar.hasClass("fixed")) {
-			if($(".gallery").height() < viewHeight) // Prevent bug when the gallery is too small
+			if($(".gallery").height() < viewHeight + navbar.height()) // Prevent bug when the gallery is too small
 				$(".header").css("marginBottom", "180px");
 			navbar.addClass("fixed"); // If itsn't, turns it fixed
 		}
 	} else {
 		// Verifies if navbar is already fixed
 		if(navbar.hasClass("fixed")) {
-			if($(".gallery").height() < viewHeight) // Prevent bug when the gallery is too small
+			if($(".gallery").height() < viewHeight + navbar.height()) // Prevent bug when the gallery is too small
 				$(".header").css("marginBottom", "0");
 			navbar.removeClass("fixed");
 			user.addClass("hide");
