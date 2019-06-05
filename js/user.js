@@ -8,6 +8,7 @@ $(document).ready( () => {
 const navbar = $(".navbar"); // Stores the navar refference
 var navbarOffset = navbar.offset().top;
 const user = $(".user");
+const profile = $(".profile.large");
 
 var scroll = $(document).scrollTop();
 
@@ -27,7 +28,6 @@ function fixNavbar() {
 		if(!navbar.hasClass("fixed")) {
 			$(".header").css("marginBottom", "180px");
 			navbar.addClass("fixed"); // If itsn't, turns it fixed
-			user.removeClass("hide");
 		}
 	} else {
 		// Verifies if navbar is already fixed
@@ -37,4 +37,9 @@ function fixNavbar() {
 			user.addClass("hide");
 		}
 	}
+
+	if(scroll >= profile.offset().top + profile.height()) 
+		user.removeClass("hide");
+	else
+		user.addClass("hide");
 }
