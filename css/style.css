@@ -15,23 +15,23 @@ html, body {
 }
 
 /* Reset Materialize parallax container height */
-.parallax-container {
+/*.parallax-container {
 	height: 70vh;
-}
+}*/
 
 /* Reset Materialize parallax style */
-.parallax-container .parallax {
+/*.parallax-container .parallax {
 	position: fixed;
 	height: inherit;
 	overflow: hidden;
 	transform: translateY(0);
 	transition: transform 0.1s;
-}
+}*/
 
 /* Reset Materialize parallax image style */
-.parallax-container .parallax img {
+/*.parallax-container .parallax img {
 	opacity: 1;	
-}
+}*/
 
 /* Navbar */
 .navbar {
@@ -97,9 +97,9 @@ html, body {
 	text-decoration: none;
 }
 
+/* Profile image and user's name wrapper */
 .navbar .user {
 	margin-left: 5px;
-	float: left;
 	display: flex;
 	align-items: center;
 	font-size: 18px;
@@ -107,6 +107,7 @@ html, body {
 	margin-right: 40px;
 }
 
+/* User's name */
 .user span {
 	margin-left: 5px;
 }
@@ -129,14 +130,9 @@ html, body {
 	background-color: transparent;
 }
 
+/* li after li style */
 li +  li {
 	margin-left: 25px !important;
-}
-
-
-/* Shadow */
-.shadow {
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
 /* Reset the default li style */
@@ -165,6 +161,11 @@ ul li a:hover {
 /* li hoverable */
 ul.hover li:hover {
 	background-color: #E7E7E7 !important;
+}
+
+/* Shadow */
+.shadow {
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
 /* Form */
@@ -266,7 +267,6 @@ input:-webkit-autofill {
 	opacity: 0.6;
 }
 
-
 /* Modal */
 
 /* Modal and overlayer */
@@ -299,6 +299,7 @@ input:-webkit-autofill {
 	max-height: 40vh;
 }
 
+/* Modal unactive style for screen width smaller than 992px */
 @media only screen and (min-width: 992px) {
 	.modal {
 		width: 60%;
@@ -360,11 +361,11 @@ input:-webkit-autofill {
 	margin-top: -8px;
 }
 */
+
 /* Brand after logo */
 .logo + .brand {
 	margin-left: 5px;
 }
-
 
 /* Username */
 .username {
@@ -381,7 +382,7 @@ input:-webkit-autofill {
 	font-size: 40px;
 }
 
-/* Slogar */
+/* Slogan */
 .slogan {
 	margin-top: 0;
 	font-size: 20px;
@@ -399,41 +400,48 @@ input:-webkit-autofill {
 	font-size: 18px;
 }
 
+/* Extra large profile image wrapper */
 .profile.extra-large {
 	height: 300px;
 	width: 300px;
 }
 
+/* Large profile image wrapper */
 .profile.large {
 	height: 250px;
 	width: 250px;
 }
 
-/* Profile image */
+/* Profile image wrapper */
 .profile {
 	/* position: absolute; */
 	/*transition: all 0.1s ;*/
 }
 
+/* Small profile image wrapper */
 .profile.small {
 	height: 40px;
 	width: 40px;
 }
 
+/* Main profile image wrapper */
 .header .profile.large {
 	position: relative;
 	top: -60%;
 }
 
+/* Main profile image */
 .header .profile.large img {
 	border: 5px solid white;
 	margin-right: 15px;
 }
 
+/* Header */
 .header {
 
 }
 
+/* Header cover */
 .cover {
 	background-image: url("../img/af-artessauro-img-5.jpg");
 	background-position: center;
@@ -441,13 +449,10 @@ input:-webkit-autofill {
 	width: 100%;
 }
 
+/* User's data wrapper */
 .user-data {
 	position: relative;
 	height: 130px;
-}
-
-.data {
-	/* transform: translateX(200px); */
 }
 
 /* Section style */
@@ -462,11 +467,11 @@ input:-webkit-autofill {
 	font-size: 25px;
 }
 
-
 .section > .row {
 	border-bottom: none !important;
 }
 
+/* Images gallery */
 .gallery {
 	width: 100%;
 	max-width: 90%;
@@ -474,18 +479,20 @@ input:-webkit-autofill {
 	column-count: 3;
 }
 
-/* @media only screen and (max-width: 780px) {
+/* Images gallery on small screens */
+@media only screen and (max-width: 780px) {
 	.gallery {
-		justify-content: center !important;
+		column-count: 2;
 	}
-} */
+} 
 
+/* Gallery item */
 .gallery-item {
 	margin-bottom: 20px;
 	break-inside: avoid-column;
 }
 
-
+/* Gallery item image */
 .gallery-item img {
 	cursor: pointer;
 	/* object-fit: cover; */
@@ -493,12 +500,14 @@ input:-webkit-autofill {
 	display: block;
 }
 
+/* Desktop screen draw */
 .desktop {
 	width: 350px;
 	height: 200px;
 	overflow: hidden;
 }
 
+/* IOS interface draw */
 .desktop .circle {
 	margin-top: 5px;
 	margin-left: 5px;
@@ -506,6 +515,7 @@ input:-webkit-autofill {
 	width: 10px;
 }
 
+/* Desktop draw after Desktop draw */
 .desktop + .desktop {
 	transform: translate(25%, -50%);
 }
