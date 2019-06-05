@@ -370,11 +370,15 @@ input:-webkit-autofill {
 /* Social networks wrapper */
 .social {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
+	position: relative;
+	left: -10px;
 }
 
 /* Space between social networks */
-.social a + a {
+.social a {
+	margin-top: 10px;
 	margin-left: 10px;
 }
 
@@ -386,6 +390,7 @@ input:-webkit-autofill {
 	color: #575757;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 /* Social network icon */
@@ -458,13 +463,13 @@ input:-webkit-autofill {
 }
 
 /* Main profile image wrapper */
-.header .profile.large {
+.overlay-cover {
 	position: relative;
-	top: -60%;
+	top: -70px;
 }
 
 /* Main profile image */
-.header .profile.large img {
+.overlay-cover img {
 	border: 5px solid white;
 	margin-right: 15px;
 }
@@ -485,7 +490,6 @@ input:-webkit-autofill {
 /* User's data wrapper */
 .user-data {
 	position: relative;
-	height: 130px;
 }
 
 /* Section style */
@@ -513,9 +517,39 @@ input:-webkit-autofill {
 }
 
 /* Images gallery on small screens */
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 992px) {
 	.gallery {
 		column-count: 2;
+	}
+
+	.cover {
+		height: 30vh;
+	}
+
+	.overlay-cover {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.overlay-cover .profile.large {
+		height: 200px;
+		width: 200px;
+		margin-bottom: -70px;
+	}
+
+	.social {
+		justify-content: center;
+	}
+
+	.social-network {
+		display: content;
+		height: 35px;
+		width: 35px;
+	}
+
+	.social-network span {
+		display: none !important;
 	}
 } 
 
