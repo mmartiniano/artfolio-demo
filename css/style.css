@@ -468,29 +468,29 @@ input:-webkit-autofill {
 }
 
 .gallery {
-	display: flex;
-	flex-flow: wrap;
-	justify-content: space-around;
+	width: 100%;
+	max-width: 90%;
+	margin: 0 auto;
+	column-count: 3;
 }
 
-@media only screen and (max-width: 780px) {
+/* @media only screen and (max-width: 780px) {
 	.gallery {
 		justify-content: center !important;
 	}
-}
+} */
 
 .gallery-item {
-	margin-top: 20px;
-	height: 300px;
-	width: 300px;
+	margin-bottom: 20px;
+	break-inside: avoid-column;
 }
 
 
 .gallery-item img {
 	cursor: pointer;
-	object-fit: cover;
-	height: 300px;
-	width: 300px;
+	/* object-fit: cover; */
+	max-width: 100%;
+	display: block;
 }
 
 .desktop {
