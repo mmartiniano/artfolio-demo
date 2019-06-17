@@ -28,16 +28,16 @@ $(document).ready( () => {
 
 	$(".section-button").click(function(){
 		arts.tagged(this.innerHTML).forEach(art => {
-			$("img[src = 'img/" + art.src + "']").parent().fadeIn();
+			$("img[src = 'img/" + art.src + "']").parent().show();
 		})
 
 		arts.notTagged(this.innerHTML).forEach(art => {
-			$("img[src = 'img/" + art.src + "']").parent().fadeOut();
+			$("img[src = 'img/" + art.src + "']").parent().hide();
 		})
 	});
 
 	$(".section-all").click(() => {
-		$(".gallery-item").fadeIn();
+		$(".gallery-item").show();
 	})
 
 	L.modal(); // Inicializate Lune modal

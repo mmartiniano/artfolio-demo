@@ -43,7 +43,6 @@ html, body {
 	padding: 0 10px 0 10px;
 	display: flex;
 	justify-content: center;
-	z-index: 10;
 	align-items: center !important;
 }
 
