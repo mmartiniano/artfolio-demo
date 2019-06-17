@@ -29,7 +29,6 @@ class L {
 	static textarea() {
 		// Resize textarea on input event
 		$("textarea").on("input", event => {
-			console.log("input");
 			const element = event.target;
 			element.style = 'height: auto';
 			element.style = 'height:' + element.scrollHeight + 'px';
@@ -106,7 +105,6 @@ class L {
 
 			// Adjust image view
 			var adjust = function(element) {
-				console.log(img.orientation);
 				// Verifies the image orientation
 				if(img.orientation == "portrait") { // Portrait
 

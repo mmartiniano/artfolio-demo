@@ -372,6 +372,7 @@ input:-webkit-autofill {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+	justify-content: center;
 	position: relative;
 	left: -10px;
 }
@@ -465,7 +466,11 @@ input:-webkit-autofill {
 /* Main profile image wrapper */
 .overlay-cover {
 	position: relative;
-	top: -70px;
+	top: -100px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: -100px;
 }
 
 /* Main profile image */
@@ -483,7 +488,7 @@ input:-webkit-autofill {
 .cover {
 	background-image: url("../img/af-artessauro-img-5.jpg");
 	background-position: center;
-	height: 50vh;
+	height: 40vh;
 	width: 100%;
 }
 
@@ -526,20 +531,9 @@ input:-webkit-autofill {
 		height: 30vh;
 	}
 
-	.overlay-cover {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-	}
-
 	.overlay-cover .profile.large {
 		height: 200px;
 		width: 200px;
-		margin-bottom: -70px;
-	}
-
-	.social {
-		justify-content: center;
 	}
 
 	.social-network {

@@ -1,7 +1,46 @@
-// Inicializate Lune modal
-$(document).ready( () => {
+var arts = [
+	{src : "lizard.png", tags : ["Pinturas Digitais"]},
+	{src : "brasa.png", tags : ["Pinturas Digitais", "Entidades"]},
+	{src : "preso.jpg", tags : ["Pinturas Digitais"]},
+	{src : "star boots.jpg", tags : ["Pinturas Digitais", "Adesivos"]},
+	{src : "sonhos lúcidos.jpg", tags : ["Giz"]},
+	{src : "lovers.png", tags : ["Pinturas Digitais", "Entidades"]},
+	{src : "af-artessauro-img-9.jpg", tags : ["Giz", "Entidades"]},
+	{src : "af-artessauro-img-2.jpg", tags : ["Pinturas Digitais"]},
+	{src : "af-artessauro-img-5.jpg", tags : ["Pinturas Digitais", "Adesivos"]},
+	{src : "af-artessauro-img-7.jpg", tags : ["Pinturas Digitais", "Adesivos"]}
+];
 
-	L.modal();
+arts.tagged = function(tag) {
+	return this.filter(art => { return art.tags.includes(tag) });
+};
+
+arts.notTagged = function(tag) {
+	return this.filter(art => { return !art.tags.includes(tag) });
+};
+
+
+
+$(document).ready( () => {
+	for(let i = 0; i < arts.length; i++) {
+		document.getElementsByClassName("gallery")[0].innerHTML += '<div class="gallery-item"><img class="img-modal-trigger" src="img/' + arts[i].src + '"></div>';
+	}
+
+	$(".section-button").click(function(){
+		arts.tagged(this.innerHTML).forEach(art => {
+			$("img[src = 'img/" + art.src + "']").parent().fadeIn();
+		})
+
+		arts.notTagged(this.innerHTML).forEach(art => {
+			$("img[src = 'img/" + art.src + "']").parent().fadeOut();
+		})
+	});
+
+	$(".section-all").click(() => {
+		$(".gallery-item").fadeIn();
+	})
+
+	L.modal(); // Inicializate Lune modal
 
 });
 
