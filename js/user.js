@@ -27,6 +27,11 @@ $(document).ready( () => {
 	}
 
 	$(".section-button").click(function(){
+		$(".section-button").removeClass("active");
+		$(".section-all").removeClass("active");
+
+		this.classList.add("active");
+
 		arts.tagged(this.innerHTML).forEach(art => {
 			$("img[src = 'img/" + art.src + "']").parent().show();
 		})
@@ -36,7 +41,12 @@ $(document).ready( () => {
 		})
 	});
 
-	$(".section-all").click(() => {
+	$(".section-all").click(function() {
+		$(".section-button").removeClass("active");
+		$(".section-all").removeClass("active");
+
+		this.classList.add("active");
+
 		$(".gallery-item").show();
 	})
 

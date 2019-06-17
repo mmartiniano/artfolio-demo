@@ -121,13 +121,17 @@ html, body {
 
 /* Resets the default li style */
 .navbar ul li {
-	min-height: 55px;
+	height: 55px;
 	float: left;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
 	padding: 5px;
 	background-color: transparent;
+}
+
+.navbar ul li.active {
+	background-color: rgba(0, 0, 0, 0.07);
 }
 
 /* li after li style */
